@@ -6,10 +6,33 @@
 <script>document.documentElement.classList.add('has-js');</script>
 <title>カジュアルビストロ Bonne soiree!（ボンソワール）経堂｜経堂で、ワインと創作フレンチを。</title>
 <meta name="description" content="経堂駅徒歩5分・宮の坂駅徒歩11分。フランス料理店・ビストロ・ワインバーの「カジュアルビストロ Bonne soiree!（ボンソワール）経堂」。洋風おばんざい・季節食材のムースカクテル・塊肉のローストなど創作フレンチと、12種類以上の自然派ワインが楽しめるカジュアルビストロです。デート・女子会・夫婦での食事にぴったりの落ち着いた空間をご用意しています。">
+
+<!-- favicon（※提案用の仮アイコン。正式ロゴ確定後に差し替え想定） -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+<!-- OGP / Twitterカード（※og:urlは公開ドメイン確定後に要修正） -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:site_name" content="カジュアルビストロ Bonne soiree!（ボンソワール）経堂">
+<meta property="og:title" content="カジュアルビストロ Bonne soiree!（ボンソワール）経堂｜経堂で、ワインと創作フレンチを。">
+<meta property="og:description" content="経堂駅徒歩5分・宮の坂駅徒歩11分。洋風おばんざい・季節食材のムースカクテル・塊肉のローストなど創作フレンチと、12種類以上の自然派ワインが楽しめるカジュアルビストロです。">
+<meta property="og:url" content="https://bonne-soiree.net/">
+<meta property="og:image" content="https://bonne-soiree.net/assets/og-image.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="カジュアルビストロ Bonne soiree!（ボンソワール）経堂｜経堂で、ワインと創作フレンチを。">
+<meta name="twitter:description" content="経堂駅徒歩5分・宮の坂駅徒歩11分。創作フレンチと12種類以上の自然派ワインが楽しめるカジュアルビストロです。">
+<meta name="twitter:image" content="https://bonne-soiree.net/assets/og-image.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<!-- LCP（ファーストビューの表示速度）改善用プリロード。ビューポート幅に応じて実際に使う方だけ先読みする -->
+<link rel="preload" as="image" href="assets/photos/hero_background_food_wine_grapes.webp" media="(min-width: 860px)">
+<link rel="preload" as="image" href="assets/photos/Hero%20Mobile%20Plate%20Background.webp" media="(max-width: 859px)">
 </head>
 <body>
 
@@ -76,7 +99,7 @@
       <img src="assets/bonne_soiree_logo_assets_transparent_png/bonne_soiree_header_logo.webp" alt="Bonne soirée!">
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
-    <nav class="site-nav">
+    <nav class="site-nav" id="site-nav">
       <a href="#top" class="nav-current"><span class="nav-en">top</span><span class="nav-jp">トップ</span></a>
       <a href="#specialty"><span class="nav-en">food</span><span class="nav-jp">名物料理</span></a>
       <a href="#wine"><span class="nav-en">wine</span><span class="nav-jp">ワイン</span></a>
@@ -86,7 +109,7 @@
     </nav>
     <div class="header-actions">
       <a href="#reserve" class="btn btn-primary btn-small">予約する</a>
-      <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニューを開く">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </label>
     </div>
@@ -150,7 +173,7 @@
       </article>
     </div>
     <div class="section-inner specialty-cta reveal">
-      <a href="#" class="btn btn-gold-outline">フードメニューを見る<svg class="icon"><use href="#icon-arrow-right"/></svg></a>
+      <a href="#" class="btn btn-gold-outline" aria-disabled="true">フードメニューを見る<svg class="icon"><use href="#icon-arrow-right"/></svg></a>
     </div>
   </section>
 
@@ -188,7 +211,7 @@
           </li>
         </ul>
 
-        <a href="#" class="btn btn-gold-outline">ドリンクメニューを見る<svg class="icon"><use href="#icon-arrow-right"/></svg></a>
+        <a href="#" class="btn btn-gold-outline" aria-disabled="true">ドリンクメニューを見る<svg class="icon"><use href="#icon-arrow-right"/></svg></a>
       </div>
     </div>
 
@@ -300,7 +323,7 @@
       <img class="footer-logo reveal" src="assets/bonne_soiree_logo_assets_transparent_png/bonne_soiree_footer_logo.webp" alt="Bonne soirée!">
       <h2 class="section-title-center reveal reveal-delay-1">ご予約・お問い合わせはこちら</h2>
       <div class="cta-group reveal reveal-delay-2">
-        <a href="#" class="btn btn-primary"><svg class="icon"><use href="#icon-calendar"/></svg>Web予約</a>
+        <a href="#" class="btn btn-primary" aria-disabled="true"><svg class="icon"><use href="#icon-calendar"/></svg>Web予約</a>
         <a href="tel:0364131519" class="btn btn-outline"><svg class="icon"><use href="#icon-phone"/></svg>電話する</a>
         <a href="#access" class="btn btn-outline"><svg class="icon"><use href="#icon-pin"/></svg>アクセスを見る</a>
       </div>

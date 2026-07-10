@@ -87,6 +87,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-cream); o
   position: relative;
 }
 
+/* 固定ヘッダー（高さ約89px）の下に見出しが隠れないための余白 */
+main section[id],
+.footer-cta[id] {
+  scroll-margin-top: 100px;
+}
+
 .title-underline {
   display: block;
   width: 56px;
@@ -566,8 +572,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-cream); o
 
 @media (min-width: 860px) {
   .scene-row { grid-template-columns: 1.35fr 1fr; }
-  .scene-row-photo { width: 100%; height: 210px; aspect-ratio: auto; }
-  .scene-row-text { padding: 24px 48px; }
+  .scene-row-photo { width: 100%; height: 184px; aspect-ratio: auto; }
+  .scene-row-text { padding: 20px 48px; }
   .scene-row-text p { font-size: 1.15rem; line-height: 1.7; }
   .scene-row-deco { width: 96px; top: 18px; right: 24px; }
 }
