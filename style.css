@@ -15,6 +15,7 @@
   --font-heading: 'Shippori Mincho', serif;
   --font-body: 'Noto Sans JP', sans-serif;
   --font-serif-en: 'Cormorant Garamond', serif;
+  --font-script: 'Parisienne', cursive;
   --max-width: 1080px;
 }
 
@@ -29,7 +30,13 @@
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 1100px 720px at 16% -12%, rgba(255, 255, 255, 0.05), transparent 55%),
+    radial-gradient(ellipse 950px 680px at 88% 108%, rgba(0, 0, 0, 0.22), transparent 55%),
+    url("assets/textures/noise.svg");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-size: auto, auto, 220px 220px;
   color: var(--color-text-light);
   font-family: var(--font-body);
   line-height: 1.8;
@@ -237,7 +244,12 @@ main section[id],
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-bg-alt);
+  background-color: var(--color-bg-alt);
+  background-image:
+    radial-gradient(ellipse 700px 260px at 50% -140%, rgba(255, 255, 255, 0.05), transparent 60%),
+    url("assets/textures/noise.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 220px 220px;
   border-bottom: 1px solid rgba(245, 241, 232, 0.1);
 }
 .site-header-inner {
@@ -455,12 +467,12 @@ main section[id],
 }
 .wine-text { max-width: 480px; }
 
-.wine-eyebrow {
+.eyebrow {
   display: block;
-  font-family: var(--font-serif-en);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.4rem;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 1.2;
   color: var(--color-gold);
   opacity: 0.9;
   margin-bottom: 6px;
@@ -537,10 +549,11 @@ main section[id],
 /* ==========================================================================
    こんなシーンに
    ========================================================================== */
-.scene-section { padding: 64px 0 0; }
+.scene-section { padding: 64px 0 56px; }
 .scene-section .section-inner { margin-bottom: 8px; }
+.scene-section .eyebrow { text-align: center; }
 @media (min-width: 860px) {
-  .scene-section { padding: 40px 0 0; }
+  .scene-section { padding: 40px 0 72px; }
   .scene-section .section-title-center { margin-bottom: 20px; }
 }
 .scene-rows { display: flex; flex-direction: column; }
@@ -555,6 +568,7 @@ main section[id],
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
+  filter: saturate(0.8) contrast(0.98) brightness(1.08);
 }
 .scene-row-text {
   position: relative;
@@ -575,39 +589,49 @@ main section[id],
   .scene-row-photo { width: 100%; height: 184px; aspect-ratio: auto; }
   .scene-row-text { padding: 20px 48px; }
   .scene-row-text p { font-size: 1.15rem; line-height: 1.7; }
-  .scene-row-deco { width: 96px; top: 18px; right: 24px; }
+  .scene-row-deco { width: 128px; top: 12px; right: 20px; }
 }
 
 /* ==========================================================================
    空間
    ========================================================================== */
-.space-section { padding: 64px 0; position: relative; overflow: hidden; }
+.space-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(20, 17, 14, 0.72), rgba(20, 17, 14, 0.72)),
+    url("assets/photos/Open Kitchen Wine Bistro Interior.webp");
+  background-size: cover;
+  background-position: center;
+}
 .space-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
-  display: grid;
-  gap: 32px;
+  text-align: center;
 }
 .space-text h2 { font-family: var(--font-heading); font-size: 1.7rem; letter-spacing: 0.1em; }
 .space-text p { color: var(--color-text-muted); margin-top: 20px; }
-.space-photo {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  border: 1px solid var(--color-border-silver);
-  object-fit: cover;
-}
+.space-text .title-underline { margin-left: auto; margin-right: auto; }
 .deco-space-corner { width: 210px; bottom: -25px; left: -25px; opacity: 0.45; }
 @media (min-width: 860px) {
-  .space-inner { grid-template-columns: 0.8fr 1.2fr; align-items: center; }
+  .space-section { padding: 160px 0; }
 }
 
 /* ==========================================================================
    店舗情報・アクセス
    ========================================================================== */
-.access-section { background: var(--color-bg-alt); padding: 64px 0; }
+.access-section {
+  background-color: var(--color-bg-alt);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 20% -10%, rgba(255, 255, 255, 0.04), transparent 55%),
+    url("assets/textures/noise.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 220px 220px;
+  padding: 64px 0;
+}
 .deco-access-border { position: relative; width: 100%; max-width: 500px; opacity: 0.4; margin: 0 auto 24px; }
 .access-grid { display: grid; gap: 40px; }
 @media (min-width: 860px) {
