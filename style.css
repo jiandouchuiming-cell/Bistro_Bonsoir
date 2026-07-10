@@ -649,3 +649,9 @@ main section[id],
 .footer-cta .cta-group { justify-content: center; margin-bottom: 40px; }
 .deco-footer-left { width: 230px; left: -10px; bottom: -10px; opacity: 0.45; }
 .deco-footer-right { width: 250px; right: -10px; bottom: -10px; opacity: 0.45; }
+
+@media (max-width: 859px) {
+  /* 幅が狭いと左右の装飾（合計480px分）が中央で重なるため、縮小して隅に寄せる */
+  .deco-footer-left { width: 110px; left: -20px; bottom: -6px; }
+  .deco-footer-right { width: 120px; right: -20px; bottom: -6px; }
+}
